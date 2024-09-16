@@ -45,6 +45,7 @@ def contextualize(prompt, chat):
         raise ContextualizeError
 
 
+# TODO: remove this function entirely?
 # return the top k matching documents for the query
 index = {"ttl": 3600}
 def get_documents(query, k=5):
@@ -60,7 +61,7 @@ def get_documents(query, k=5):
         index["updated_at"] = time()
 
     try:
-        r = llm.embedding(query)
+        r = llm.embedding(query)  # TODO: remove this call entirely?
     except llm.EmbeddingError:
         raise GetDocumentsError
     query_embedding = np.array(r)
