@@ -45,6 +45,8 @@ def contextualize(prompt, chat):
         raise ContextualizeError
 
 
+# TODO: remove this function entirely?
+# TODO: remove this function entirely?
 # return the top k matching documents for the query
 index = {"ttl": 3600}
 def get_documents(query, k=5):
